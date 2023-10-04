@@ -12,16 +12,8 @@ It is expected:
 
 ```mermaid
 graph LR;
-    subgraph core skills
-    A(Trainee)-->B(Junior);
-    B-->C(Middle);
-    C-->D(Senior);
-    D-->E(Expert);
-    subgraph tech skills
-    A-->F[Trainee];
-    F-->G[Junior];
-    G-->H[Middle];
-    H-->I[Senior];
-    I-->J[Expert];
-    end
+    A(Trainee)==>B(Junior);
+    B==>C(Middle);
+    C==>D(Senior);
+    D==>E(Expert);
 ```
