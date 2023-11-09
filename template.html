@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>QA Skills Matrix</title>
+    <link rel="stylesheet" type="text/css" href="web/style.css">
+    <script type="text/javascript" src="web/jquery.min.js"></script>
+    <script type="text/javascript" src="web/script.js"></script>
+</head>
+<body>
+<main>
+    <div class="container">
+        {% for file in data %}
+        <div class="tabs">
+            <div class="description">
+                <h1>{{file['header']}}</h1>
+                <p>{{file['description']}}</p>
+            </div>
+            <div class="tabNav">
+                {% for index, level in levels %}
+                <div class="tabNavEl tn{{index}}" data="tab{{index}}">{{level}}</div>
+                {% endfor %}
+            </div>
+            <div class="tabBox">
+                {% for index, level in levels %}
+                <div class="tabHead tabHead{{index}}" data="ab{{index}}">{{level}}</div>
+                <div class="tabEl tab{{index}}">
+                    {% for item in file['category'][level] %}
+                    <p>{{item}}</p>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+</body>
+</html>
