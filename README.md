@@ -1,12 +1,11 @@
 [![Support Ukraine Badge](https://bit.ly/support-ukraine-now)](https://github.com/support-ukraine/support-ukraine)
 
-# skills-matrix
-123
+# Tech Skills Matrix
 Skills matrix to evaluate QA engineers
 
 ## How to use?
 
-- Open in Github pages: https://infopulse-qa.github.io/skills-matrix/
+- Open in Github pages: https://infopulse-qa.github.io/Tech-Skills-Matrix
 - Review required skills for each level and category
 - Evaluate yourself and your team members
 
