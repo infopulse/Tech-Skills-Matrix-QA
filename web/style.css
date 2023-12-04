@@ -11,110 +11,113 @@
 html {
   height: 100%;
 }
+
 header {
   position: relative;
   width: 100%;
-  height: 480px;
   background-color: #1d1e1e;
+}
+header .container {
+  padding: 0;
 }
 
 .coverImage {
-  position: absolute;
-  top: 0;
-  left: 55%;
-  width: 45%;
-  height: 100%;
+  width: 100%;
+  min-height: 240px;
   background-image: url("images/headerImage.png");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-position: 60% 0;
+  background-size: cover;
 }
 
 .headerTextContainer {
-  width: 50%;
+  padding: 0 16px;
+  width: 100%;
   height: 100%;
   background-color: #1d1e1e;
   box-sizing: border-box;
 }
 
-@media (max-width: 992px) {
-  .headerTextContainer {
-    padding-top: 15px;
-  }
-  .headerTextContainer h1 {
-    padding-top: 25px;
-  }
+.logo {
+  width: 96px;
+  height: auto;
 }
 
-@media (max-width: 768px) {
-  header {
-    height: 750px;
-  }
-
-  .headerTextContainer {
-    width: 100%;
-    height: 100%;
-    height: 50%;
-  }
-
-  .coverImage {
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 50%;
-  }
+header .logo {
+  margin-top: 20px;
 }
 
-@media (max-width: 360px) {
-  header {
-    height: 616px;
-  }
-
-  .coverImage {
-    height: 35%;
-    top: 65%;
-  }
-}
-
-@media (min-width: 992px) {
-  .headerTextContainer {
-    padding-top: 40px;
-  }
-  .headerTextContainer h1 {
-    padding-top: 55px;
-  }
-}
-@media (min-width: 1200px) {
-  .headerTextContainer h1 {
-    padding-top: 75px;
-  }
-}
-
-.headerTextContainer h1 {
+h1 {
   color: #ffffff;
-  font: 700 66px/76px "Open Sans", sans-serif;
-  padding-right: 18px;
+  font: 700 48px/56px "Open Sans", sans-serif;
+  margin-top: 60px;
 }
 
-@media (max-width: 360px) {
-  .headerTextContainer h1 {
-    font: 700 48px/56px "Open Sans", sans-serif;
-  }
-}
-
-.headerTextContainer span {
+span.line {
   color: #8bc53f;
 }
 
-.headerTextContainer P {
+h1 + P {
   color: #ffffff;
   font: 400 16px/22px "Open Sans", sans-serif;
-  padding-right: 18px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 0;
 }
 
-.logo {
-  max-width: 100%;
-  max-height: 100%;
+@media (min-width: 768px) {
+  .headerTextContainer {
+    padding: 0 46px;
+  }
+
+  header .logo {
+    margin-top: 40px;
+  }
+
+  h1 {
+    margin-top: 80px;
+    font-size: 66px;
+    line-height: 76px;
+  }
+
+  h1 + P {
+    margin-top: 28px;
+    margin-bottom: 92px;
+  }
+
+  .coverImage {
+    min-height: calc((100vw - 360px) * 0.24 + 240px);
+  }
 }
+
+@media (min-width: 1280px) {
+  header {
+    height: 460px;
+  }
+
+  .headerTextContainer {
+    padding-left: 52px;
+    width: 55%;
+  }
+
+  h1 {
+    margin-top: 100px;
+  }
+
+  h1 + P {
+    margin-top: 28px;
+    margin-bottom: 32px;
+  }
+
+  .coverImage {
+    width: 45%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
 body {
   background: #fff;
   height: 100%;
@@ -156,27 +159,19 @@ li:last-child {
 
 .container {
   width: 100%;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-@media (min-width: 576px) {
-  .container {
-    max-width: 576px;
-  }
+  padding: 0 16px;
+  margin: 0;
 }
 @media (min-width: 768px) {
   .container {
-    max-width: 768px;
+    padding: 0 46px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1280px) {
   .container {
-    max-width: 990px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
+    max-width: 1200px;
+    padding: 0;
+    margin: 0 auto;
   }
 }
 
@@ -199,7 +194,7 @@ main {
   text-align: center;
 }
 h1 {
-  padding: 0 0 30px;
+  /* padding: 0 0 30px; */
 }
 p {
   padding: 0 0 15px;
@@ -353,19 +348,19 @@ p {
 }
 
 footer {
-  padding-top: 45px;
+  padding: 40px 0 20px;
   background: #1d1e1e;
-  height: 225px;
 }
 
 .footerTextContainer {
   display: flex;
-  justify-content: space-between;
-  padding-bottom: 75px;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 60px;
 }
 
 .footerLink {
-  font: 400 16px/22px "Open Sans", sans-serif;
+  font: 400 14px/22px "Open Sans", sans-serif;
   color: #ffffff;
 }
 
@@ -389,17 +384,30 @@ footer {
   color: #d8dce1;
 }
 
-@media (max-width: 576px) {
+@media (min-width: 360px) {
   footer {
-    height: 274px;
+    padding-top: 60px;
   }
+
+  .footerTextContainer a:first-of-type {
+    margin-bottom: 12px;
+  }
+}
+
+@media (min-width: 768px) {
   .footerTextContainer {
-    flex-direction: column;
-    gap: 16px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 80px;
   }
 
   .footerLink,
   .rightsReservedText {
-    font-size: 14px;
+    font-size: 16px;
+  }
+
+  .footerTextContainer a:first-of-type {
+    margin: 0;
   }
 }
