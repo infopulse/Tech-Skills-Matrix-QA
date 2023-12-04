@@ -96,7 +96,7 @@ h1 + P {
   }
 
   .headerTextContainer {
-    padding-left: 52px;
+    padding: 0 16px 0 0;
     width: 55%;
   }
 
