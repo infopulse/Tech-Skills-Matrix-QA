@@ -165,12 +165,31 @@ h1 + P {
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding-bottom: 30px;
 }
 .description h2 {
-  margin-bottom: 16px;
+  color: #1d1e1e;
+  font: 700 38px/48px "Open Sans", sans-serif;
 }
 .description p {
-  margin-bottom: 24px;
+  color: #4b4c4c;
+  font: 400 16px/22px "Open Sans", sans-serif;
+}
+
+@media (max-width: 360px) {
+  .description h2 {
+    font-size: 24px;
+    line-height: 33px;
+  }
+  .description p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .description h2 {
+    padding-bottom: 15px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -185,7 +204,7 @@ h1 + P {
     width: 60%;
   }
   .description p {
-    margin: 0 0 40px 20px;
+    margin: 15px 0 40px 20px;
   }
 }
 
@@ -214,10 +233,9 @@ h1 + P {
   background-size: auto 32px;
   height: 60px;
   padding: 3px 10px 0 64px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #1d1e1e;
   margin: 0;
-  line-height: 1;
-  text-transform: uppercase;
+  font: 700 14px/20px "Open Sans", sans-serif;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -227,21 +245,23 @@ h1 + P {
 }
 .tabHead2 {
   background-image: url(images/jun.png);
+  border-top: none;
 }
 .tabHead3 {
   background-image: url(images/mid.png);
   background-size: auto 36px;
+  border-top: none;
 }
 .tabHead4 {
   background-image: url(images/senior.png);
+  border-top: none;
 }
 .tabHead5 {
   background-image: url(images/expert.png);
+  border-top: none;
 }
 .tabHead.active {
-  background-color: #578594;
-  color: #fff;
-  font-weight: 700;
+  border-bottom: 3px solid #8bc53f;
 }
 .tabHead1.active {
   background-image: url(images/trainee.png);
@@ -261,7 +281,7 @@ h1 + P {
 .tabEl {
   padding: 20px;
   display: none;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #1d1e1e;
   border-top: none;
 }
 
@@ -286,18 +306,20 @@ h1 + P {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: end;
   }
   .tabNavEl {
     background: url(images/trainee.png) no-repeat center 70px #fff;
-    background-size: auto 40px;
-    padding: 24px 15px 94px;
-    font-size: 18px;
-    line-height: 1.2;
-    text-align: center;
-    border: 1px solid red;
+    background-size: auto 50px;
+    background-position: 15px 15px;
+    padding: 115px 15px 15px;
+    font: 700 18px/26px "Open Sans", sans-serif;
+    text-align: start;
+    border: 1px solid #1d1e1e;
     border-right: none;
     transition: background-color ease 0.3s;
     cursor: pointer;
+    text-align: bottom;
   }
   .tabNavEl.tn2 {
     background-image: url(images/jun.png);
@@ -310,7 +332,7 @@ h1 + P {
   }
   .tabNavEl.tn5 {
     background-image: url(images/expert.png);
-    border-right: 1px solid red;
+    border-right: 1px solid #1d1e1e;
   }
   .tabEl {
     padding: 40px;
@@ -321,10 +343,8 @@ h1 + P {
   }
   .tabNavEl.active,
   .tabNavEl:hover {
-    background-color: #578594;
-    color: #fff;
-    font-weight: 700;
-    border-bottom: 5px solid green;
+    box-sizing: border-box;
+    border-bottom: 3px solid #8bc53f;
   }
   .tabNavEl.tn1.active,
   .tabNavEl.tn1:hover {
@@ -347,11 +367,10 @@ h1 + P {
     background-image: url(images/expert.png);
   }
 }
+
 @media (min-width: 992px) {
   .tabs + .tabs {
     padding: 80px 0 0;
-  }
-  .tabNav {
   }
   .tabNavEl {
     font-size: 23px;
