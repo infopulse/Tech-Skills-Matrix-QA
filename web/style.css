@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+/* 8bc53f */
+:root {
+  --color-background: #fff;
+  --color-primary: #8bc53f;
+  --color-secondary: #5c9a0c;
+  --color-text-primary: #1d1e1e;
+  --color-text-secondary: #4b4c4c;
+  --color-grey1: #888888;
+  --color-grey2: #d8dce1;
+}
 
 * {
   border: medium none;
@@ -18,7 +28,7 @@ html {
 }
 
 body {
-  background: #fff;
+  background: var(--color-background);
   height: 100%;
   color: #000;
   font: normal 14px "Open Sans", sans-serif;
@@ -38,7 +48,7 @@ a:focus {
 header {
   position: relative;
   width: 100%;
-  background-color: #1d1e1e;
+  background-color: var(--color-text-primary);
 }
 header .container {
   padding: 0;
@@ -57,7 +67,7 @@ header .container {
   padding: 0 16px;
   width: 100%;
   height: 100%;
-  background-color: #1d1e1e;
+  background-color: var(--color-text-primary);
   box-sizing: border-box;
 }
 
@@ -77,11 +87,11 @@ h1 {
 }
 
 span.line {
-  color: #8bc53f;
+  color: var(--color-primary);
 }
 
 h1 + P {
-  color: #ffffff;
+  color: var(--color-background);
   font: 400 16px/22px "Open Sans", sans-serif;
   margin-top: 20px;
   margin-bottom: 30px;
@@ -170,12 +180,17 @@ h1 + P {
   padding-bottom: 30px;
 }
 .description h2 {
-  color: #1d1e1e;
+  color: var(--color-text-primary);
   font: 700 38px/48px "Open Sans", sans-serif;
 }
 .description p {
-  color: #4b4c4c;
+  color: var(--color-text-secondary);
   font: 400 16px/22px "Open Sans", sans-serif;
+}
+.chapter-index {
+  font: 700 38px/48px "Open Sans", sans-serif;
+  color: #a2d45e;
+  padding-right: 20px;
 }
 
 @media (max-width: 360px) {
@@ -231,11 +246,13 @@ h1 + P {
   display: none;
 }
 .tabHead {
-  background: url(images/trainee.png) no-repeat 15px center #fff;
+  position: relative;
+  background: url(images/trainee.png) no-repeat 15px center
+    var(--color-background);
   background-size: auto 32px;
   height: 60px;
   padding: 3px 10px 0 64px;
-  border: 1px solid #1d1e1e;
+  border: 1px solid var(--color-text-primary);
   margin: 0;
   font: 700 14px/20px "Open Sans", sans-serif;
   display: flex;
@@ -262,9 +279,17 @@ h1 + P {
   background-image: url(images/expert.png);
   border-top: none;
 }
-.tabHead.active {
-  border-bottom: 3px solid #8bc53f;
+.tabHead.active:after,
+.tabHead:hover:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background-color: var(--color-primary);
 }
+
 .tabHead1.active {
   background-image: url(images/trainee.png);
 }
@@ -283,14 +308,14 @@ h1 + P {
 .tabEl {
   padding: 20px;
   display: none;
-  border: 1px solid #1d1e1e;
+  border: 1px solid var(--color-text-primary);
   border-top: none;
 }
 
 .tabEl li {
   list-style-position: inside;
   list-style-image: url("images/bullet.svg");
-  color: #4b4c4c;
+  color: var(--color-text-secondary);
   font-size: 16px;
   line-height: 22px;
   margin-bottom: 8px;
@@ -311,13 +336,15 @@ h1 + P {
     align-items: end;
   }
   .tabNavEl {
-    background: url(images/trainee.png) no-repeat center 70px #fff;
+    position: relative;
+    background: url(images/trainee.png) no-repeat center 70px
+      var(--color-background);
     background-size: auto 50px;
     background-position: 15px 15px;
     padding: 115px 15px 15px;
     font: 700 18px/26px "Open Sans", sans-serif;
     text-align: start;
-    border: 1px solid #1d1e1e;
+    border: 1px solid var(--color-text-primary);
     border-right: none;
     transition: background-color ease 0.3s;
     cursor: pointer;
@@ -334,7 +361,7 @@ h1 + P {
   }
   .tabNavEl.tn5 {
     background-image: url(images/expert.png);
-    border-right: 1px solid #1d1e1e;
+    border-right: 1px solid var(--color-text-primary);
   }
   .tabEl {
     padding: 40px;
@@ -343,12 +370,18 @@ h1 + P {
   .tabEl li {
     margin-bottom: 16px;
   }
-  .tabNavEl.active,
-  .tabNavEl:hover {
-    box-sizing: border-box;
-    border-bottom: 3px solid #8bc53f;
-    padding-bottom: 13px;
+
+  .tabNavEl.active:after,
+  .tabNavEl:hover:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background-color: var(--color-primary);
   }
+
   .tabNavEl.tn1.active,
   .tabNavEl.tn1:hover {
     background-image: url(images/trainee.png);
@@ -387,7 +420,7 @@ h1 + P {
 
 footer {
   padding: 40px 0 20px;
-  background: #1d1e1e;
+  background: var(--color-text-primary);
 }
 
 .footerTextContainer {
@@ -399,27 +432,27 @@ footer {
 
 .footerLink {
   font: 400 14px/22px "Open Sans", sans-serif;
-  color: #ffffff;
+  color: var(--color-background);
 }
 
 .footerLink:hover,
 .footerLink:focus {
-  color: #8bc53f;
+  color: var(--color-primary);
 }
 
 .footerLink:active {
-  color: #5c9a0c;
+  color: var(--color-secondary);
 }
 
 .divider {
   content: "";
   width: 100%;
-  border-bottom: 1px #888888 solid;
+  border-bottom: 1px var(--color-grey1) solid;
   margin-bottom: 15px;
 }
 .rightsReservedText {
   font: 400 16px/22px "Open Sans", sans-serif;
-  color: #d8dce1;
+  color: var(--color-grey2);
 }
 
 @media (min-width: 360px) {
