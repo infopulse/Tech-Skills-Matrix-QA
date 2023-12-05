@@ -345,6 +345,7 @@ h1 + P {
   .tabNavEl:hover {
     box-sizing: border-box;
     border-bottom: 3px solid #8bc53f;
+    padding-bottom: 13px;
   }
   .tabNavEl.tn1.active,
   .tabNavEl.tn1:hover {
