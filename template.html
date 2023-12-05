@@ -48,11 +48,11 @@
             <div class="tabHead tabHead{{index}}" data="ab{{index}}">
               {{level}}
             </div>
-            <div class="tabEl tab{{index}}">
+            <ul class="tabEl tab{{index}}">
               {% for item in file['category'][level] %}
-              <p>{{item}}</p>
+              <li>{{item}}</li>
               {% endfor %}
-            </div>
+            </ul>
             {% endfor %}
           </div>
         </div>
