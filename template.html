@@ -1,41 +1,82 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="format-detection" content="telephone=no"/>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
     <title>QA Skills Matrix</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
-</head>
-<body>
-<main>
-    <div class="container">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="headerTextContainer">
+          <a href="https://www.infopulse.com/">
+            <img alt="logo" class="logo" src="images/InfopulseLogo.png" />
+          </a>
+          <h1>QA Skills Matrix<span class="line">_</span></h1>
+          <p>
+            Infopulse Infrastructure & Cloud Management Services optimize your
+            costs and increase the efficiency of your IT infrastructure by using
+            innovations and emphasis on high-quality service design.
+          </p>
+        </div>
+        <div class="coverImage"></div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
         {% for file in data %}
         <div class="tabs">
-            <div class="description">
-                <h1>{{file['header']}}</h1>
-                <p>{{file['description']}}</p>
+          <div class="description">
+            <h2>
+              <span class="primary">{{file['number']}}</span>{{file['header']}}
+            </h2>
+            <p>{{file['description']}}</p>
+          </div>
+          <div class="tabNav">
+            {% for index, level in levels %}
+            <div class="tabNavEl tn{{index}}" data="tab{{index}}">
+              {{level}}
             </div>
-            <div class="tabNav">
-                {% for index, level in levels %}
-                <div class="tabNavEl tn{{index}}" data="tab{{index}}">{{level}}</div>
-                {% endfor %}
+            {% endfor %}
+          </div>
+          <div class="tabBox">
+            {% for index, level in levels %}
+            <div class="tabHead tabHead{{index}}" data="ab{{index}}">
+              {{level}}
             </div>
-            <div class="tabBox">
-                {% for index, level in levels %}
-                <div class="tabHead tabHead{{index}}" data="ab{{index}}">{{level}}</div>
-                <div class="tabEl tab{{index}}">
-                    {% for item in file['category'][level] %}
-                    <p>{{item}}</p>
-                    {% endfor %}
-                </div>
-                {% endfor %}
+            <div class="tabEl tab{{index}}">
+              {% for item in file['category'][level] %}
+              <p>{{item}}</p>
+              {% endfor %}
             </div>
+            {% endfor %}
+          </div>
         </div>
         {% endfor %}
-    </div>
-</main>
-</body>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footerTextContainer">
+          <a href="https://www.infopulse.com/">
+            <img alt="logo" class="logo" src="images/InfopulseLogo.png" />
+          </a>
+          <a
+            class="footerLink"
+            href="https://github.com/infopulse-qa/Tech-Skills-Matrix"
+            >Back to github project</a
+          >
+          <a class="footerLink" href="#">Roadmap</a>
+        </div>
+        <div class="divider"></div>
+        <span class="rightsReservedText"
+          >© 2023, Infopulse. All rights reserved</span
+        >
+      </div>
+    </footer>
+  </body>
 </html>
