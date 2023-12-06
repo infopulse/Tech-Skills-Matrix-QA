@@ -32,7 +32,7 @@
         <div class="tabs">
           <div class="description">
             <h2>
-              <span class="primary">{{file['number']}}</span>{{file['header']}}
+              <span class="chapter-index">{{file['number']}}</span>{{file['header']}}<span class="line">_</span>
             </h2>
             <p>{{file['description']}}</p>
           </div>
@@ -48,11 +48,11 @@
             <div class="tabHead tabHead{{index}}" data="ab{{index}}">
               {{level}}
             </div>
-            <div class="tabEl tab{{index}}">
+            <ul class="tabEl tab{{index}}">
               {% for item in file['category'][level] %}
-              <p>{{item}}</p>
+              <li>{{item}}</li>
               {% endfor %}
-            </div>
+            </ul>
             {% endfor %}
           </div>
         </div>
@@ -73,9 +73,7 @@
           <a class="footerLink" href="#">Roadmap</a>
         </div>
         <div class="divider"></div>
-        <span class="rightsReservedText"
-          >© 2023, Infopulse. All rights reserved</span
-        >
+        <p class="rightsReservedText">© 2023, Infopulse. All rights reserved</p>
       </div>
     </footer>
   </body>
