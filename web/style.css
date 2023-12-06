@@ -104,11 +104,11 @@ h1 + P {
   }
 
   header .logo {
-    margin-top: 40px;
+    margin-top: 53px;
   }
 
   h1 {
-    margin-top: 80px;
+    margin-top: 76px;
     font-size: 66px;
     line-height: 76px;
   }
@@ -125,7 +125,7 @@ h1 + P {
 
 @media (min-width: 1280px) {
   header {
-    height: 460px;
+    height: 480px;
   }
 
   .headerTextContainer {
@@ -134,7 +134,7 @@ h1 + P {
   }
 
   h1 {
-    margin-top: 100px;
+    margin-top: 96px;
   }
 
   h1 + P {
@@ -167,6 +167,10 @@ h1 + P {
     padding: 0;
     margin: 0 auto;
   }
+
+  main .container {
+    max-width: 1223px;
+  }
 }
 
 .tabs {
@@ -177,7 +181,7 @@ h1 + P {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 30px;
+  padding-bottom: 17px;
 }
 .description h2 {
   color: var(--color-text-primary);
@@ -213,7 +217,7 @@ h1 + P {
 
 @media (min-width: 768px) {
   .tabs {
-    margin: 100px 0;
+    margin: 102px 0;
   }
   .description {
     flex-direction: row;
@@ -223,13 +227,13 @@ h1 + P {
     width: 60%;
   }
   .description p {
-    margin: 15px 0 40px 20px;
+    margin: 10px 0 45px 0;
   }
 }
 
 @media (min-width: 1280px) {
   .tabs {
-    margin: 120px 0;
+    margin: 121px 0;
   }
   .description h2 {
     width: 50%;
@@ -237,9 +241,6 @@ h1 + P {
 }
 
 @media (min-width: 1920px) {
-  .tabs {
-    margin: 150px 0;
-  }
   .description h2 {
     width: 50%;
   }
@@ -324,9 +325,6 @@ h1 + P {
 }
 
 @media (min-width: 768px) {
-  .tabs + .tabs {
-    padding: 50px 0 0;
-  }
   .tabHead {
     display: none;
   }
@@ -341,9 +339,9 @@ h1 + P {
     position: relative;
     background: url(images/trainee.png) no-repeat center 70px
       var(--color-background);
-    background-size: auto 50px;
+    background-size: auto 32px;
     background-position: 15px 15px;
-    padding: 115px 15px 15px;
+    padding: 69px 33px 15px;
     font: 700 18px/26px "Open Sans", sans-serif;
     text-align: start;
     border: 1px solid var(--color-text-primary);
@@ -407,8 +405,9 @@ h1 + P {
 }
 
 @media (min-width: 992px) {
-  .tabs + .tabs {
-    padding: 80px 0 0;
+  .tabNavEl {
+    background-size: auto 50px;
+    padding: 115px 15px 15px;
   }
   .tabNavEl {
     font-size: 23px;
@@ -454,7 +453,7 @@ footer {
 }
 .rightsReservedText {
   font: 400 14px/22px "Open Sans", sans-serif;
-  color: var(--color-grey2);  
+  color: var(--color-grey2);
   text-align: center;
 }
 
