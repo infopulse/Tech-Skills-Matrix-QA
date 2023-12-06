@@ -15,12 +15,18 @@ jQuery(document).ready(function($) {
 			}
 		})
 		$('.tabNavEl').on('click', function() {
-			$(this).parent().children().removeClass('active');
-			$(this).parent().parent().find('.tabHead').removeClass('active');
-			$(this).parent().parent().find('.tabEl.vis').hide().removeClass('vis');
-			$(this).addClass('active');
-			let tab = '.' + $(this).attr('data');
-			$(this).parent().parent().find(tab).addClass('vis').fadeIn();
+			if($(this).hasClass('active')) {
+				$(this).parent().children().removeClass('active');
+				$(this).parent().parent().find('.tabHead').removeClass('active');
+				$(this).parent().parent().find('.tabEl.vis').hide().removeClass('vis')
+			} else {
+				$(this).parent().children().removeClass('active');
+				$(this).parent().parent().find('.tabHead').removeClass('active');
+				$(this).parent().parent().find('.tabEl.vis').hide().removeClass('vis');  
+				$(this).addClass('active');
+				let tab = '.' + $(this).attr('data');
+				$(this).parent().parent().find(tab).addClass('vis').fadeIn();
+		}
 		})
 	}
 })
