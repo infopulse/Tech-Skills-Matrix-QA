@@ -4,17 +4,19 @@ import os
 TEMPLATE = 'template.html'
 MATRIX = 'matrix'
 OUTPUT = 'web/index.html'
+number = 1
 
-
-def convert(file):
+def convert(file, num):
     with open(file) as file:
         lines = file.readlines()
 
     data = {'category': {}}
     category = ''
+    
     for line in lines:
         if line.startswith('# '):
             data['header'] = line.strip('#').strip()
+            data['number'] = '0' + str(num)
         elif line.startswith('## '):
             category = line.strip('##').strip()
             data['category'][category] = []
@@ -32,8 +34,9 @@ if __name__ == '__main__':
     data = []
     files = os.listdir(MATRIX)
     for file in files:
-        if file.endswith('.md'):
-            data.append(convert(os.path.join(MATRIX, file)))
+        if file.endswith('.md'):            
+            data.append(convert(os.path.join(MATRIX, file), number))
+            number += 1
     template = Template(open(TEMPLATE).read())
     levels = ((1, 'Trainee'), (2, 'Junior'), (3, 'Middle'), (4, 'Senior'), (5, 'Expert'))
     with open(OUTPUT, 'w') as file:
