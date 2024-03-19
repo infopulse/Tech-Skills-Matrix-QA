@@ -31,19 +31,10 @@ As a company we expect that:
 4. the matrix is used both for internal QA engineers and for [hiring purposes](https://www.infopulse.com/join-us?specialization=9)
 
 ## Roadmap
-_⚠️ Currently under development_  
 It is good to measure the skills using the matrix, but it is even better to have a guide on how to improve the skills 
-and gain new knowledge.
-
-
-```mermaid
-graph LR
-;
-    A(Trainee) ==> B(Junior);
-    B ==> C(Middle);
-    C ==> D(Senior);
-    D ==> E(Expert);
-```
+and gain new knowledge.  
+- [The roadmap](roadmap/roadmap.md) _⚠️ Currently under development_  
+- Checkout this roadmap as possible reference: https://roadmap.sh/qa
 
 ## How to contribute?
 You are welcome to:
