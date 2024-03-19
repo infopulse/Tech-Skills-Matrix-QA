@@ -41,3 +41,9 @@ You are welcome to:
 - leave your comments and suggestions in [Issues](https://github.com/infopulse/Tech-Skills-Matrix-QA/issues)
 - create pull-requests with your changes
 Or create a pull-request!
+
+## Matrix maintenance plan
+- We plan to add AI usage category to the matrix
+- We plan to review and update the matrix every 12 months, including the review of PR and issues
+- We plan to add a self-assessment tool to the matrix
+- We plan to add a roadmap for QA engineers
