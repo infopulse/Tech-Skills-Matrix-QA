@@ -6,13 +6,14 @@ MATRIX = 'matrix'
 OUTPUT = 'web/index.html'
 number = 1
 
+
 def convert(file, num):
     with open(file) as file:
         lines = file.readlines()
 
     data = {'category': {}}
     category = ''
-    
+
     for line in lines:
         if line.startswith('# '):
             data['header'] = line.strip('#').strip()
@@ -33,8 +34,9 @@ def convert(file, num):
 if __name__ == '__main__':
     data = []
     files = os.listdir(MATRIX)
+    files.sort()
     for file in files:
-        if file.endswith('.md'):            
+        if file.endswith('.md'):
             data.append(convert(os.path.join(MATRIX, file), number))
             number += 1
     template = Template(open(TEMPLATE).read())
