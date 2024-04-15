@@ -40,7 +40,7 @@ and gain new knowledge.
 You are welcome to:
 - leave your comments and suggestions in [Issues](https://github.com/infopulse/Tech-Skills-Matrix-QA/issues)
 - create pull-requests with your changes
-Or create a pull-request!
+
 
 ## Matrix maintenance plan
 - We plan to add AI usage category to the matrix
