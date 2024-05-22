@@ -323,6 +323,17 @@ h1 + P {
   margin-bottom: 8px;
 }
 
+/* New styles for nested lists */
+.tabEl ul {
+  margin-left: 20px;
+}
+
+.tabEl ul li {
+  list-style-image: url("images/bullet.svg");
+  margin-bottom: 4px;
+  margin-top: 8px;
+}
+
 @media (min-width: 768px) {
   .tabs + .tabs {
     padding: 50px 0 0;
