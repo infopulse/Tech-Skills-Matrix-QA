@@ -49,8 +49,17 @@
               {{level}}
             </div>
             <ul class="tabEl tab{{index}}">
-              {% for item in file['category'][level] %}
-              <li>{{item}}</li>
+              {% for item in file['category'].get(level, []) %}
+              <li>
+                {{item.text}}
+                {% if item.subitems %}
+                <ul>
+                  {% for subitem in item.subitems %}
+                  <li>{{subitem}}</li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </li>
               {% endfor %}
             </ul>
             {% endfor %}

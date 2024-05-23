@@ -13,6 +13,7 @@ def convert(file, num):
 
     data = {'category': {}}
     category = ''
+    current_list = None
 
     for line in lines:
         if line.startswith('# '):
@@ -21,10 +22,12 @@ def convert(file, num):
         elif line.startswith('## '):
             category = line.strip('##').strip()
             data['category'][category] = []
+            current_list = data['category'][category]
         elif line.startswith('- '):
-            data['category'][category].append(line.strip('-').strip())
+            current_list.append({'text': line.strip('-').strip(), 'subitems': []})
         elif line.startswith('  - '):
-            data['category'][category].append(line.strip())
+            if current_list:
+                current_list[-1]['subitems'].append(line.strip('  - ').strip())
         else:
             data['description'] = line.strip()
 
